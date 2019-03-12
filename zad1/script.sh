@@ -23,7 +23,7 @@ for filename in tests/*.0; do
 done
 
 for filename in tests/*.1; do
-        ./attack "tests/$filename"
+        ./attack $filename
         res=$?
 	testCount=$((testCount+1))
         if [ $res == 1 ]; then
