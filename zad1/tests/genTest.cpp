@@ -55,6 +55,32 @@ int main(){
 		k = bswap_32(68020);
 		fwrite(&k, sizeof(k), 1, ptr);
 	}
+
+	if (testNo == 3){
+		int k = bswap_32(68021);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(6);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(8);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(6);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(6);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(8);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(0);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(2);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(0);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(0);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(-37);
+		fwrite(&k, sizeof(k), 1, ptr);
+	}
+
 	if (testNo == -4){
 		int k = bswap_32(68020);
 		fwrite(&k, sizeof(k), 1, ptr);

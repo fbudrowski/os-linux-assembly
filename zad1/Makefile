@@ -4,3 +4,6 @@ attack:
 
 clean:
 	rm -f attack attack.o
+
+test:
+	gcc tests/genTest.cpp -o tests/gentest
