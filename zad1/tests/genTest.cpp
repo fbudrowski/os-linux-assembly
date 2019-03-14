@@ -85,6 +85,26 @@ int main(){
 		int k = bswap_32(68020);
 		fwrite(&k, sizeof(k), 1, ptr);
 	}
+
+	if (testNo == 4){
+		int k = bswap_32(6);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(8);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(0);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(2);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(0);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(-13);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(68019);
+		fwrite(&k, sizeof(k), 1, ptr);
+		k = bswap_32(~0U >> 1);
+		for(int i = 0; i < 2; i++) fwrite(&k, sizeof(k), 1, ptr);
+	}
+
 	fclose(ptr);
 	return 0;
 }
