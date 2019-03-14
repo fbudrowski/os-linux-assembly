@@ -87,22 +87,38 @@ int main(){
 	}
 
 	if (testNo == 4){
-		int k = bswap_32(6);
+		int k;
+		for (int i = 0; i < 10000; i++) {
+			k = bswap_32(6);
+			fwrite(&k, sizeof(k), 1, ptr);
+			k = bswap_32(8);
+			fwrite(&k, sizeof(k), 1, ptr);
+			k = bswap_32(0);
+			fwrite(&k, sizeof(k), 1, ptr);
+			k = bswap_32(2);
+			fwrite(&k, sizeof(k), 1, ptr);
+			k = bswap_32(0);
+			fwrite(&k, sizeof(k), 1, ptr);
+			k = bswap_32(-13);
+			fwrite(&k, sizeof(k), 1, ptr);
+			k = bswap_32(68019);
+			fwrite(&k, sizeof(k), 1, ptr);
+			k = bswap_32(~0U >> 1);
+			for (int j = 0; j < 2; j++) fwrite(&k, sizeof(k), 1, ptr);
+		}
+
+		k = bswap_32(-(1 << 29));
 		fwrite(&k, sizeof(k), 1, ptr);
-		k = bswap_32(8);
+		k = bswap_32(-(1 << 27));
 		fwrite(&k, sizeof(k), 1, ptr);
-		k = bswap_32(0);
+		k = bswap_32(-(1 << 23));
 		fwrite(&k, sizeof(k), 1, ptr);
-		k = bswap_32(2);
+		k = bswap_32(-(1 << 19));
 		fwrite(&k, sizeof(k), 1, ptr);
-		k = bswap_32(0);
+		k = bswap_32(-(1 << 17));
 		fwrite(&k, sizeof(k), 1, ptr);
-		k = bswap_32(-13);
+		k = bswap_32(628);
 		fwrite(&k, sizeof(k), 1, ptr);
-		k = bswap_32(68019);
-		fwrite(&k, sizeof(k), 1, ptr);
-		k = bswap_32(~0U >> 1);
-		for(int i = 0; i < 2; i++) fwrite(&k, sizeof(k), 1, ptr);
 	}
 
 	fclose(ptr);
