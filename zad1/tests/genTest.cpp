@@ -121,6 +121,45 @@ int main(){
 		fwrite(&k, sizeof(k), 1, ptr);
 	}
 
+  if (testNo == -5){
+    // TODO
+  }
+
+  if (testNo == 5){
+    int k = bswap_32(6);
+    for (int i = 0; i < 10000000; i++)
+      fwrite(&k, sizeof(k), 1, ptr);
+    k = bswap_32(8);
+    fwrite(&k, sizeof(k), 1, ptr);
+    k = bswap_32(0);
+    fwrite(&k, sizeof(k), 1, ptr);
+    k = bswap_32(2);
+    fwrite(&k, sizeof(k), 1, ptr);
+    k = bswap_32(0);
+    fwrite(&k, sizeof(k), 1, ptr);
+
+    k = bswap_32(1 << 23);
+    fwrite(&k, sizeof(k), 1, ptr);
+
+    for (int i = 26; i <= 30; i++) {
+      k = bswap_32(1 << i);
+      fwrite(&k, sizeof(k), 1, ptr);
+    }
+
+    k = bswap_32(~0U >> 1);
+    fwrite(&k, sizeof(k), 1, ptr);
+
+    k = bswap_32(-(1 << 20));
+    fwrite(&k, sizeof(k), 1, ptr);
+    k = bswap_32(-(1 << 17));
+    fwrite(&k, sizeof(k), 1, ptr);
+    k = bswap_32(-(1 << 15));
+    fwrite(&k, sizeof(k), 1, ptr);
+
+    k = bswap_32(683);
+    fwrite(&k, sizeof(k), 1, ptr);
+  }
+
 	fclose(ptr);
 	return 0;
 }
