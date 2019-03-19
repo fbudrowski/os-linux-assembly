@@ -121,11 +121,11 @@ int main(){
 		fwrite(&k, sizeof(k), 1, ptr);
 	}
 
-  if (testNo == 5){
+  if (testNo == -5){
 	  //TODO
   }
 
-  if (testNo == -5){ // Output 1: nie ma sp. podciagu 6,8,0,2,0
+  if (testNo == 5){ // Output 0
     int k = bswap_32(6);
     for (int i = 0; i < 10000000; i++)
       fwrite(&k, sizeof(k), 1, ptr);
