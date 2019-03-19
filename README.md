@@ -11,5 +11,5 @@ Tests with a generator are in a "test" catalogue. For a "script.sh" testing scri
 Tests expecting exit code 0 should have a .0 suffix and those expecting exit code 1 should end with .1
 
 ### Future changes
-I will make my solution to task 1 public soon after the **20 March** deadline.
+I will make my solution to task 1 public soon after the **22 March** deadline.
 
